@@ -81,3 +81,23 @@ button:active,.btn:active{transform:translateY(0) scale(.98) !important}
   button,.btn{transition:none!important}
   button::after,.btn::after{display:none}
 }
+
+/* ELRFAEY PREMIUM DARK THEME */
+:root{--blue:#2f8cff;--dark:#05080f;--gold:#d9a441;--bg:#060a12;--text:#f4f7fb;--muted:#9aa8ba;--card:#0d1420;--border:#1c2a3d;--shadow:0 22px 70px rgba(0,0,0,.38)}
+body{background:radial-gradient(circle at 8% 5%,rgba(47,140,255,.14),transparent 25%),radial-gradient(circle at 92% 15%,rgba(217,164,65,.10),transparent 23%),linear-gradient(145deg,#04070d,#08111e 52%,#05080f);color:var(--text)}
+.topbar{background:rgba(8,13,22,.82);border-color:#1d3047;box-shadow:0 12px 45px rgba(0,0,0,.22)}
+.brand b{color:#eaf4ff}.brand small{color:#e2b55b}.icon-btn{background:#0d1725;border-color:#1d3047}.btn-primary{background:linear-gradient(135deg,#2f8cff,#0758b8);box-shadow:0 12px 30px rgba(47,140,255,.22)}.btn-light,.btn-ghost{background:#101b2a;color:#dcecff;border:1px solid #1e334b}.stats article,.cta,.content-card,.panel,.card,.admin-card{background:#0c1420;border-color:#1c2a3d;color:var(--text)}
+.stats article{box-shadow:var(--shadow)}.stats i{background:rgba(47,140,255,.12);color:#61a9ff}.stats b{color:#65adff}.section-head p,.hero-copy>p:not(.en),.stats small{color:#9aa8ba}.hero h1 em{color:#55a4ff}.cta{background:linear-gradient(135deg,#0c5fbc,#071b36);border:1px solid #205181}.input,.admin-form input,.admin-form select,.admin-form textarea,input,select,textarea{background:#09111d!important;color:#eef6ff!important;border-color:#20344c!important}.input::placeholder,input::placeholder,textarea::placeholder{color:#6f8299}.table-wrap,.table{background:#0b131f;color:#edf5ff}.table th{background:#111e2d;color:#dbeaff}.table td{border-color:#1c2a3d}.badge{background:#142236}.auth-wrap{background:radial-gradient(circle at 10% 10%,rgba(47,140,255,.18),transparent 30%),radial-gradient(circle at 90% 80%,rgba(217,164,65,.12),transparent 30%),linear-gradient(145deg,#03060b,#07111f 55%,#05080f)}
+
+/* ===== ELRFAEY PREMIUM DARK THEME ===== */
+:root{--blue:#2f8cff;--dark:#05080f;--gold:#e4b957;--bg:#060a12;--text:#edf5ff;--muted:#91a1b5;--card:#0b111c;--border:#1b2b40;--shadow:0 22px 65px rgba(0,0,0,.38)}
+body{background:radial-gradient(circle at 8% 0%,rgba(47,140,255,.14),transparent 28%),radial-gradient(circle at 92% 15%,rgba(228,185,87,.10),transparent 25%),#060a12;color:var(--text)}
+.topbar{background:rgba(9,16,27,.78);border-color:#1b2b40;box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.brand b{color:#55a4ff}.brand small{color:var(--gold)}
+.btn-ghost{background:#0d1a2a;color:#6eb4ff;border:1px solid #203752}.btn-light{background:#101b2b;color:#fff}
+.stats article,.dash-card,.content-card,.panel,.admin-stat{background:linear-gradient(145deg,#0c1421,#09101a);border-color:#1b2b40;box-shadow:var(--shadow);color:var(--text)}
+.stats small,.dash-card small,.content-body p,.section-head p{color:#8fa0b5}.stats i{background:rgba(47,140,255,.12)}
+.section-head h2,.section-head h1,.dash-card b,.content-body h3{color:#f2f7ff}.cover{background:linear-gradient(135deg,#0d4f9f,#071a31);position:relative;overflow:hidden}.cover:after{content:"";position:absolute;inset:-40%;background:linear-gradient(120deg,transparent,rgba(228,185,87,.10),transparent);transform:rotate(20deg);animation:sheen 5s linear infinite}.tag{background:rgba(47,140,255,.12);color:#6eb4ff}.welcome{background:linear-gradient(135deg,#0d4f9f,#071a31);box-shadow:0 20px 60px rgba(20,91,170,.28)}
+.hero-copy>p:not(.en){color:#9aa9bb}.eyebrow{background:rgba(47,140,255,.11);color:#65adff}.teacher-photo img{border-color:#101b2b;box-shadow:0 25px 70px rgba(0,0,0,.5)}
+.cta{background:linear-gradient(135deg,#0d4f9f,#071a31)}
+@keyframes sheen{0%{transform:translateX(-40%) rotate(20deg)}100%{transform:translateX(40%) rotate(20deg)}}
