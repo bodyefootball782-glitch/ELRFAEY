@@ -1,13 +1,6 @@
 (() => {
   window.ELR = window.ELR || {};
   window.ELR.escape = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-  window.normalizeEgyptianPhone = value => {
-    let phone = String(value || '').replace(/[\s()\-]/g, '');
-    if (phone.startsWith('00')) phone = '+' + phone.slice(2);
-    if (phone.startsWith('01')) phone = '+20' + phone.slice(1);
-    if (/^20(10|11|12|15)\d{8}$/.test(phone)) phone = '+' + phone;
-    return phone;
-  };
   window.requireAuth = async function (admin=false) {
     if (!window.elrfaeySupabase) {
       alert('اربط Supabase من js/supabase-config.js أولًا.');
