@@ -21,7 +21,9 @@ Authentication → Providers → Email → فعّل Email.
 سجّل حسابًا عاديًا من `elrfaey/register.html`، ثم نفّذ في SQL Editor:
 
 ```sql
-update public.profiles set role='admin' where phone='+2010XXXXXXXX';
+select id, full_name, login_email from public.profiles order by created_at desc;
+
+update public.profiles set role='admin' where id='PASTE-USER-ID-HERE';
 ```
 
 بعدها افتح `admin/index.html`.
@@ -35,7 +37,7 @@ update public.profiles set role='admin' where phone='+2010XXXXXXXX';
 
 ## نظام الدخول الجديد
 - لا يوجد رقم هاتف ولا OTP.
-- التسجيل: الاسم الرباعي + الثانوية + الصف + كلمة سر من 20 حرفًا/رقمًا بالضبط.
+- التسجيل: الاسم الرباعي + المرحلة (ابتدائية/إعدادية/ثانوية) + الصف + كلمة سر من 20 حرفًا/رقمًا بالضبط.
 - الدخول: كلمة السر فقط.
 - كلمة السر تُحوّل داخليًا إلى بريد حساب مخفي؛ لا يتم حفظ كلمة السر كنص صريح.
 - كل كلمة سر يجب أن تكون مختلفة بين الحسابات، لأن كلمة السر هي مفتاح تحديد الحساب.
