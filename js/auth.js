@@ -9,7 +9,7 @@ stage?.addEventListener('change',fillGrades); fillGrades();
 function msg(t,ok=false){const e=document.getElementById('authMsg');if(e){e.textContent=t;e.className='auth-msg '+(ok?'ok':'bad');}}
 function validName(n){return n.split(/\s+/).filter(Boolean).length===4;}
 function validPass(p){return /^[A-Za-z0-9]{20}$/.test(p);}
-async function passEmail(password){const bytes=new TextEncoder().encode(password);const hash=await crypto.subtle.digest('SHA-256',bytes);const hex=[...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');return `student_${hex}@accounts.elrfaey.local`;}
+async function passEmail(password){const bytes=new TextEncoder().encode(password);const hash=await crypto.subtle.digest('SHA-256',bytes);const hex=[...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');return `student_${hex}@accounts.elrfaey.app`;}
 async function ready(){if(!window.elrfaeySupabase){msg('ضع بيانات Supabase في js/supabase-config.js');return false}return true;}
 
 document.getElementById('registerForm')?.addEventListener('submit',async e=>{
