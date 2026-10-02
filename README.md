@@ -1,20 +1,36 @@
-# ELRFAEY Educational Platform — FINAL
+# ELRFAEY — FINAL PREMIUM
 
-نسخة موحدة جاهزة للربط بـ Supabase.
+## نظام الحسابات
+- لا يوجد رقم هاتف ولا OTP.
+- إنشاء الحساب: الاسم الرباعي + المرحلة + الصف + كلمة سر من 10 أحرف/أرقام/رموز بالضبط، بدون مسافات.
+- تسجيل الدخول: كلمة السر فقط.
+- كلمة السر لا تظهر في قاعدة البيانات كبيانات ملف شخصي؛ Supabase Auth يتولى تخزين والتحقق من كلمة السر.
+- الحسابات تستخدم معرف بريد داخليًا فقط حتى يعمل Supabase Auth، والطالب لا يراه ولا يدخله.
 
-### تشمل
-- Supabase Auth (هاتف + كلمة مرور)
-- Profiles / Roles
-- Content + protected Storage
-- Free/Paid content + purchase requests
-- Admin dashboard
-- Student dashboard
-- Exams + secure server-side grading
-- Results + XP
-- Students / Content / Purchases / Results management
+## مراحل الدراسة
+- ابتدائية: الأول إلى السادس.
+- إعدادية: الأول إلى الثالث.
+- ثانوية: الأول إلى الثالث.
 
-### تشغيل
-1. نفّذ `supabase/schema.sql` كاملًا.
-2. ضع Project URL وPublishable/anon key في `js/supabase-config.js`.
-3. أنشئ أول حساب ثم اجعله Admin حسب `SETUP_SUPABASE.md`.
-4. ارفع المجلد كما هو إلى Vercel أو أي static hosting.
+## Vercel — مطلوب مرة واحدة
+أضف Environment Variables إلى مشروع Vercel:
+- `SUPABASE_URL` = رابط مشروع Supabase.
+- `SUPABASE_SERVICE_ROLE_KEY` = Service Role Key الخاص بالمشروع.
+
+**لا تضع Service Role Key داخل أي ملف JavaScript يعمل في المتصفح.**
+
+بعد إضافة المتغيرات اعمل Redeploy.
+
+## Supabase
+1. شغّل `supabase/schema.sql` في SQL Editor.
+2. لا تحتاج لإدخال Email أو Phone للطلاب.
+3. يمكن أن يظل Email/Phone provider غير مستخدم للطلاب؛ التسجيل يتم عبر `/api/auth` باستخدام Service Role على الخادم ثم إنشاء جلسة Supabase.
+4. لإنشاء Admin: أنشئ حسابًا عاديًا أولًا، ثم نفّذ في SQL Editor:
+
+```sql
+select id, full_name from public.profiles order by created_at desc;
+update public.profiles set role='admin' where id='USER-ID-HERE';
+```
+
+## ملاحظة
+الـService Role Key سرّي جدًا ويجب أن يبقى في Environment Variables على Vercel فقط.
